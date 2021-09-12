@@ -1,19 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Week1 from './Week1';
-import Week2 from './Week2';
 import reportWebVitals from './reportWebVitals';
-let currentDate = new Date();
-let firstJan = new Date(currentDate.getFullYear(),0,1);
-let numberOfDays = Math.floor((currentDate - firstJan) / (24*60*60*1000));
-let currentWeek = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
-let renderWeek = (currentWeek % 2 === 0) ? <Week1/> : <Week2/>;
+import Calculate from './Calculate'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    {renderWeek}
+    <Calculate/>
   </React.StrictMode>,
   document.getElementById('root')
 );
